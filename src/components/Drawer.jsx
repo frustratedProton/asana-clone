@@ -16,20 +16,29 @@ const Sidebar = () => {
           position: 'fixed',
           top: 60, 
           left: 0,
+          borderRight: '1px solid rgba(0, 0, 0, 0.12)',
+          backgroundColor: 'background.paper',
+          overflow: 'auto',
+          display: 'flex',
+          flexDirection: 'column',
         },
       }}
     >
-      <List>
-        <ListItem button component={Link} to="/home">
-          <ListItemIcon><Home /></ListItemIcon>
+      <List sx={{ pt: 2 }}>
+        <ListItem button component={Link} to="/home" sx={{ '&.Mui-selected': { backgroundColor: 'rgba(0, 0, 0, 0.08)' } }}>
+          <ListItemIcon sx={{ color: 'text.primary' }}>
+            <Home />
+          </ListItemIcon>
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem button component={Link} to="/tasks">
-          <ListItemIcon><Task /></ListItemIcon>
+        <ListItem button component={Link} to="/tasks" sx={{ '&.Mui-selected': { backgroundColor: 'rgba(0, 0, 0, 0.08)' } }}>
+          <ListItemIcon sx={{ color: 'text.primary' }}>
+            <Task />
+          </ListItemIcon>
           <ListItemText primary="Tasks" />
         </ListItem>
       </List>
-      <Divider />
+      <Divider sx={{ mt: 1, borderColor: 'divider' }} />
     </Drawer>
   );
 };

@@ -29,10 +29,10 @@ const TopBar = () => {
   };
 
   return (
-    <AppBar position="fixed" color="default" sx={{ boxShadow: 'none', height: 60 }}>
+    <AppBar position="fixed" color="primary" sx={{ boxShadow: 'none', height: 60 }}>
       <Toolbar sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 1 }}>
+          <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
             <MenuIcon />
           </IconButton>
 
@@ -40,10 +40,10 @@ const TopBar = () => {
             aria-controls="create-menu"
             aria-haspopup="true"
             onClick={handleCreateMenuClick}
-            variant="outlined"
-            color="primary"
+            variant="contained"
+            color="secondary"
             sx={{
-              borderRadius: '50px',
+              borderRadius: '20px',
               display: 'flex',
               alignItems: 'center',
               px: 2,
@@ -51,15 +51,18 @@ const TopBar = () => {
               minWidth: 'auto',
               mx: 1,
               height: 'auto',
+              fontSize: '0.875rem',
+              backgroundColor: '#3f51b5',  
+              color: 'white', 
+              '&:hover': {
+                backgroundColor: '#303f9f', 
+              },
             }}
           >
             <AddIcon
               sx={{
                 mr: 1,
-                color: 'white',
-                backgroundColor: 'red',
-                borderRadius: '50%',
-                p: 0.5,
+                color: 'inherit',
                 fontSize: '1.2rem',
               }}
             />
@@ -71,7 +74,7 @@ const TopBar = () => {
             anchorEl={createMenuAnchorEl}
             open={createMenuOpen}
             onClose={handleCreateMenuClose}
-            sx={{ mt: '45px' }}
+            sx={{ mt: '40px' }}
           >
             <MenuItem onClick={handleCreateMenuClose}>Task</MenuItem>
             <MenuItem onClick={handleCreateMenuClose}>Project</MenuItem>
@@ -85,16 +88,21 @@ const TopBar = () => {
             sx={{ 
               maxWidth: 600, 
               width: '100%',
-              borderRadius: '50px',
+              borderRadius: '20px',
+              backgroundColor: 'white', 
               '& .MuiOutlinedInput-root': {
-                borderRadius: '50px',
+                borderRadius: '20px',
+                backgroundColor: 'white',
               },
               '& .MuiInputBase-input': {
                 padding: '8px 14px',
                 fontSize: '0.875rem',
               },
+              '& .MuiInputAdornment-root': {
+                color: 'text.secondary',
+              }
             }}
-            InputProps={{ startAdornment: <SearchIcon /> }}
+            InputProps={{ startAdornment: <SearchIcon sx={{ color: 'text.secondary' }} /> }}
           />
         </div>
 
@@ -114,10 +122,10 @@ const TopBar = () => {
           open={accountMenuOpen}
           onClose={handleAccountMenuClose}
           PaperProps={{
-            elevation: 0,
+            elevation: 3,
             sx: {
               overflow: 'visible',
-              filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+              filter: 'drop-shadow(0px 4px 8px rgba(0,0,0,0.2))',
               mt: 1.5,
               '& .MuiAvatar-root': {
                 width: 32,

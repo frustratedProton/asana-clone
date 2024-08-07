@@ -1,16 +1,19 @@
-// src/index.jsx
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import App from './App.jsx';
-import Home from './routes/Home.jsx';
-import Tasks from './routes/Tasks.jsx';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import App from './App';
+import { TasksProvider } from './TasksContext';
+import Home from './routes/Home';
+import Tasks from './routes/Tasks';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <TasksProvider>
+        <App />
+      </TasksProvider>
+    ),
     children: [
       {
         path: "home",
@@ -20,14 +23,14 @@ const router = createBrowserRouter([
         path: "tasks",
         element: <Tasks />,
       },
-      // Set the default route to /home
       {
-        index: true,  // This makes /home the default route
+        index: true,
         element: <Home />,
       }
     ]
   }
 ]);
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
