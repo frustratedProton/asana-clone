@@ -55,7 +55,7 @@ const Home = () => {
 	const weekdayName = weekdayNames[weekday];
 
 	return (
-		<Container sx={{ mt: 4, maxWidth: 'md' }}>
+		<Container sx={{ mt: 0, maxWidth: 'md' }}>
 			<Card sx={{ boxShadow: 3, borderRadius: 2, mb: 4 }}>
 				<CardContent>
 					<Box display="flex" alignItems="center" mb={2}>

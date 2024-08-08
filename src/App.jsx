@@ -8,7 +8,7 @@ const App = () => {
       <TopBar />
       <div style={{ display: 'flex', flex: 1 }}>
         <Sidebar />
-        <main style={{ flex: 1, marginLeft: 20, padding: '16px', marginTop: 60 }}>
+        <main style={{ flex: 1, marginLeft: 20, padding: '16px', marginTop: 40 }}>
           <Outlet />
         </main>
       </div>

@@ -1,4 +1,5 @@
-import { Box, Typography, Divider, Avatar } from '@mui/material';
+import { Box, Typography, Divider } from '@mui/material';
+import PersonIcon from '@mui/icons-material/Person';
 
 const PeopleContainer = () => {
     return (
@@ -22,12 +23,11 @@ const PeopleContainer = () => {
             <Divider sx={{ mb: 2 }} />
             <Box
                 sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(2, 1fr)',
                     gap: 2,
                 }}
             >
-                {/* Person 1 */}
                 <Box
                     sx={{
                         p: 2,
@@ -39,18 +39,21 @@ const PeopleContainer = () => {
                         display: 'flex',
                         alignItems: 'center',
                         gap: 2,
+                        width: '100%',
+                        boxSizing: 'border-box',
                     }}
                 >
-                    <Avatar
-                        sx={{ bgcolor: 'grey.500' }}
-                    >
-                        A
-                    </Avatar>
-                    <Typography variant="body1" gutterBottom>
-                        <strong>Alex Johnson</strong>
-                    </Typography>
+                    <PersonIcon sx={{ color: 'grey.500' }} />
+                    <Box
+                        sx={{
+                            flexGrow: 1,
+                            bgcolor: 'grey.300',
+                            height: '24px',
+                            borderRadius: 1,
+                            opacity: 0.6,
+                        }}
+                    />
                 </Box>
-                {/* Person 2 */}
                 <Box
                     sx={{
                         p: 2,
@@ -62,16 +65,72 @@ const PeopleContainer = () => {
                         display: 'flex',
                         alignItems: 'center',
                         gap: 2,
+                        width: '100%',
+                        boxSizing: 'border-box',
                     }}
                 >
-                    <Avatar
-                        sx={{ bgcolor: 'grey.500' }}
-                    >
-                        B
-                    </Avatar>
-                    <Typography variant="body1" gutterBottom>
-                        <strong>Beatrice Smith</strong>
-                    </Typography>
+                    <PersonIcon sx={{ color: 'grey.500' }} />
+                    <Box
+                        sx={{
+                            flexGrow: 1,
+                            bgcolor: 'grey.300',
+                            height: '24px',
+                            borderRadius: 1,
+                            opacity: 0.6,
+                        }}
+                    />
+                </Box>
+                <Box
+                    sx={{
+                        p: 2,
+                        borderRadius: 2,
+                        bgcolor: 'background.default',
+                        boxShadow: 1,
+                        border: '1px solid',
+                        borderColor: 'divider',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 2,
+                        width: '100%',
+                        boxSizing: 'border-box',
+                    }}
+                >
+                    <PersonIcon sx={{ color: 'grey.500' }} />
+                    <Box
+                        sx={{
+                            flexGrow: 1,
+                            bgcolor: 'grey.300',
+                            height: '24px',
+                            borderRadius: 1,
+                            opacity: 0.6,
+                        }}
+                    />
+                </Box>
+                <Box
+                    sx={{
+                        p: 2,
+                        borderRadius: 2,
+                        bgcolor: 'background.default',
+                        boxShadow: 1,
+                        border: '1px solid',
+                        borderColor: 'divider',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 2,
+                        width: '100%',
+                        boxSizing: 'border-box',
+                    }}
+                >
+                    <PersonIcon sx={{ color: 'grey.500' }} />
+                    <Box
+                        sx={{
+                            flexGrow: 1,
+                            bgcolor: 'grey.300',
+                            height: '24px',
+                            borderRadius: 1,
+                            opacity: 0.6,
+                        }}
+                    />
                 </Box>
             </Box>
         </Box>
